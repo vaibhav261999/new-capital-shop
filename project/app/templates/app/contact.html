@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<body style="background-image: url({% static 'image/bg43.jpg' %}); height: 200px;  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+<div style="display: flex; justify-content: space-around;">
+    <div style="border: 5px solid black; background-color: white; border-radius: 130px; height: 350px; width: 400px; margin-top: 50px; margin-left: 20px;">
+        <h1 style="margin-top: 40px; margin-left: 90px;"> CONTACT US </h1>
+        <br>
+        <h5 style="margin-left: 50px;">You can contact us via Call between 10 AM to 6 PM</h5>
+        <br><br>
+        <h4 style="margin-left: 50px;">Address : Mall Road, Shimla</h4>
+        <br>
+        <h4 style="margin-left: 50px;">Call : 0987654321</h4>
+        <br>
+        <h4 style="margin-left: 50px;">Email : abc@gmail.com</h4>
+        <br>
+        <h4 style="margin-left: 50px;">Order Related : abc_business@gmail.com</h4>
+    </div>
+
+    <!-- <div>
+        <img src="{% static 'image/career3.png' %}" style="height: 489px;">
+    </div> -->
+
+</div>
+</body>
+
+{% endblock %}

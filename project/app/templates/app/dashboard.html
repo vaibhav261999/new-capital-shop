@@ -1,0 +1,57 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+
+<body>
+    <center>
+        <nav style="background-color: #BF80FF; padding: 10px;">
+            <a href="{% url 'showdata' pk=key.email %}" style="color: red; word-spacing: 3px;">SHOW ALL QUERIES</a>
+        </nav>
+        <div style="display: flex; justify-content: space-between; background-color: #D9B3FF; height: 433px;">
+            <div>
+                <img src="{% static './image/bg52.jpg' %}" style="height: 430px;" width="600px">
+            </div>
+            <div style="margin-right: 200px; margin-top: 40px;">
+                <h1>QUERY FORM</h1>
+                <br><br>
+                {% if key2 %}
+                                <h1>EDIT DATA</h1>
+                                    <form action="{% url 'update' pk=key2.id %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="text" name="dsh_id" placeholder="email" value={{key2.id}} readonly>
+                                        <br><br>
+                                        <input type="email" name="dsh_email" placeholder="email" value={{key2.email}} readonly>
+                                        <br><br>
+                                        <input type="text" name="orderid" value={{key2.order}} placeholder="OrderId">
+                                        <br><br>
+                                        <input type="text" name="dsh_query" value={{key2.query}} placeholder="Issue">
+                                        <br><br>
+                                        
+                                        Desired Solution :
+                                        <input type="radio" name="choice">Exchange
+                                        <input type="radio" name="choice">Return
+                                        <br><br><br>
+                                        <button type="submit" value="submit">Update</button>
+                                    </form>
+
+                {% else %}
+                                    <form action="{% url 'query' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="email" name="dsh_email" placeholder="email" value={{key.email}} readonly>
+                                        <br><br>
+                                        <input type="text" name="orderid" placeholder="OrderId">
+                                        <br><br>
+                                        <input type="text-box" name="dsh_query" placeholder="Issue"></input>
+                                        <br><br>
+                                        Desired Solution :
+                                        <input type="radio" name="choice">Exchange
+                                        <input type="radio" name="choice">Return
+                                        <br><br><br>
+                                        <button type="submit" value="submit">Submit</button>
+                                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </center>
+</body>
+{% endblock%}

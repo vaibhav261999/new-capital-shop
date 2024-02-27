@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+
+<div>
+    <h1 style="margin-top: 20px; margin-left: 540px;">Our Services</h1>
+</div>
+
+<div style="padding: 20px; display: flex; justify-content: space-around;">
+    <img src="{% static 'image/about1.png' %}" style="height: 376px; width: 350px;">
+
+    <img src="{% static 'image/about2.png' %}" style="height: 376px; width: 350px;">
+
+    <img src="{% static 'image/about3.png' %}" style="height: 376px; width: 350px;">
+</div>
+
+{% endblock%}

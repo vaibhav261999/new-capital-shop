@@ -1,0 +1,34 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<center>
+    <body style="background-image: url({% static 'image/bg28.jpg' %}); height: 533px;  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <h1 style="color: red; margin-right: 500px;">{{msg}}</h1>
+    <div style="margin-top: 100px; margin-right: 500px;">
+        <div style="height: 100px; width: 400px; background-color: #7100b2; ">
+        <h1>LOG IN</h1>
+        <div style=" background-color: #934AB3; padding: 20px;">
+            <form action="{% url 'dashlogin' %}" method="post">
+                {% csrf_token %}
+
+                <input class="email" type="email" name="email" placeholder="Email" required="">
+
+                <br><br>
+
+                <input class="text" type="password" name="password" placeholder="Password" required="">
+
+                <br><br> <br>
+
+                <input type="submit" value="Login" style="width: 60px;">
+            </form>
+        </div>
+        <br>
+        <p>Don't have an account?</p>
+        <a href="./register.html">Sign Up</a>
+    </div>
+    </div>
+</body>
+</center>
+
+{% endblock %}

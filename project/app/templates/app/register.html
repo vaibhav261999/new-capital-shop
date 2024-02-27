@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<center>
+
+    <body style="background-image: url({% static 'image/bg45.jpg' %}); height: 443px;  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+        <h1 style="color: red; margin-right: 500px;">{{msg}}</h1>
+        <div style="margin-top: 70px; margin-right: 500px;">
+            <div style="height: 70px; width: 400px; background-color: #7100b2;  margin-top: 30px;">
+                <h1>SIGN UP</h1>
+                <div style=" background-color: #934AB3; padding: 20px;">
+                    <form action="{% url 'savedata' %}" method="post">
+                        {% csrf_token %}
+                        <input class="text" type="text" name="fname" placeholder="Firstname" required="">
+                        <br><br>
+                        <input class="text" type="text" name="lname" placeholder="Lastname" required="">
+                        <br><br>
+                        <input class="email" type="email" name="email" placeholder="Email" required="">
+                        <br><br>
+                        <input class="text" type="text" name="contact" placeholder="Contact" required="">
+                        <br><br>
+                        <input class="text" type="password" name="password" placeholder="Password" required="">
+                        <br><br>
+                        <input class="text" type="password" name="cpassword" placeholder="Confirm Password"
+                            required="">
+
+                        <br><br><br>
+
+                        <input type="submit" value="Register" style="width: 70px;">
+                    </form>
+                </div>
+                <p>Already have an account?</p>
+                <a href="./login.html">Log In</a>
+            </div>
+        </div>    
+    </body>
+</center>
+{% endblock %}

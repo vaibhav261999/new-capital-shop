@@ -1,0 +1,45 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+
+<body>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</body>
+
+<center>
+    <body style="background-color: #CC99FF;">
+
+        <div style="margin-top: 20px;">
+            <h1>QUERY DATA</h1>
+        </div>
+
+        <br>
+
+        <!-- <table border="1" align="center" width="700" bgcolor="orange"> -->
+        <table align="center" width="700">
+            <thead style="background-color: #E4F1EE;">
+                <tr>
+                    <!-- <th>ID</th> -->
+                    <th>Email</th>
+                    <th>OrderId</th>
+                    <th>Query</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: #D9EDF8;">
+                {% for i in key1 %}
+                <tr align="center">
+                    <!-- <td>{{i.id}}</td> -->
+                    <td>{{i.QueryEmail}}</td>
+                    <td>{{i.OrderId}}</td>
+                    <td>{{i.Query}}</td>
+                    <td><a href="{% url 'edit' pk=i.id %}"><i style="color: green; padding: 8px;" class='bx bxs-edit-alt'></i></a></td>
+                    <td><a href="{% url 'delete' pk=i.id %}"><i style="color: red;" class='bx bx-trash'></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+</center>
+</body>
+{% endblock %}

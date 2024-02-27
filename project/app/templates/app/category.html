@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% block content %}
+{% load static %}
+<div>
+    <center>
+        <div style="padding: 40px;">
+            <h1>Top Categories</h1>
+        </div>
+
+        <div style="display: flex; justify-content: space-around;">
+            <a href=""><img src="{% static 'image/category1.jpg.' %}" style="height: 250px; width: 250px;"></a>
+
+            <a href=""><img src="{% static 'image/category2.jpg' %}" style="height: 250px; width: 250px;"></a>
+
+            <a href=""><img src="{% static 'image/category3.jpg' %}" style="height: 250px; width: 250px;"></a>
+
+            <a href=""><img src="{% static 'image/category4.jpg' %}" style="height: 250px; width: 250px;"></a>
+        </div>
+
+
+
+    </center>
+</div>
+{% endblock %}
