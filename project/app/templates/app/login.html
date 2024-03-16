@@ -1,9 +1,10 @@
-{% extends 'app/base.html' %}
+{% extends 'app/index.html' %}
 
 {% block content %}
 {% load static %}
 <center>
-    <body style="background-image: url({% static 'image/bg28.jpg' %}); height: 533px;  background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <body style="background-image: url({% static 'image/app/bg28.jpg' %}); height: 533px; 
+     background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
     <h1 style="color: red; margin-right: 500px;">{{msg}}</h1>
     <div style="margin-top: 100px; margin-right: 500px;">
         <div style="height: 100px; width: 400px; background-color: #7100b2; ">
